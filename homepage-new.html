@@ -6,6 +6,7 @@
 	<!-- Google analytics for the page -->
 	<!-- Global site tag (gtag.js) - Google Analytics -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-171309141-1"></script>
+	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 	<script>
 		window.dataLayer = window.dataLayer || [];
 		function gtag() { dataLayer.push(arguments); }
@@ -16,24 +17,22 @@
 
 
 	<title>Technical Prophet</title>
-	<link href='https://fonts.googleapis.com/css?family=Play' rel='stylesheet'>
-
-	<meta name="description" content="On this Vijay Diwas, remember the jawans who sacrificed their lives for the nation, leaving all that was dear to them behind, so that we live in freedom.">
+	<meta name="description" content="The first installment of our Acing Interview series. ">
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 	<!-- facebook linkedin meta tags -->
 	<meta property="og:type" content="article" />
-	<meta property="og:title" content="Kargil Vijay Diwas: Defending Sovereignty " />
-	<meta property="og:description" content="On this Vijay Diwas, remember the jawans who sacrificed their lives for the nation, leaving all that was dear to them behind, so that we live in freedom." />
-	<meta property="og:image" content="https://blog.istemanipal.com/mobile/1595744426628-326.jpg" />
-	<meta property="og:url" content="https://blog.istemanipal.com/articles/5f1d1facaf71a373f033f0cc" />
+	<meta property="og:title" content="Interview Experience I: Acing Citrix R&amp;D" />
+	<meta property="og:description" content="The first installment of our Acing Interview series. " />
+	<meta property="og:image" content="https://blog.istemanipal.com/mobile/1600157612243-citrix.jpg" />
+	<meta property="og:url" content="https://blog.istemanipal.com/articles/5f573635d757df4b8700fb89" />
 	<meta property="og:site_name" content="The Technical Prophet" />
 
 	<!-- twitter meta tags -->
-	<meta name="twitter:title" content="Kargil Vijay Diwas: Defending Sovereignty ">
-	<meta name="twitter:description" content="On this Vijay Diwas, remember the jawans who sacrificed their lives for the nation, leaving all that was dear to them behind, so that we live in freedom.">
-	<meta name="twitter:image" content="https://blog.istemanipal.com/mobile/1595744426628-326.jpg">
+	<meta name="twitter:title" content="Interview Experience I: Acing Citrix R&amp;D">
+	<meta name="twitter:description" content="The first installment of our Acing Interview series. ">
+	<meta name="twitter:image" content="https://blog.istemanipal.com/mobile/1600157612243-citrix.jpg">
 	<meta name="twitter:site" content="@Shubham97390539">
 	<meta name="twitter:creator" content="@Shubham97390539">
 	<meta name="twitter:card" content="summary_large_image">
@@ -76,9 +75,37 @@
 			<div class="collapse navbar-collapse" id="ftco-nav">
 				<ul class="navbar-nav ml-auto">
 					<li id="home" class="nav-item  active"><a href="/" class="nav-link">Home</a></li>
-					<li id="articles" class="nav-item "><a href="/articles" class="nav-link">Articles</a></li>
+					<li id="articles" class="nav-item dropdown">
+						<a class="nav-link dropdown-toggle" href="/articles" id="navbarDropdown" role="button"
+							aria-haspopup="true" aria-expanded="false">
+							Articles
+						</a>
+
+						<div id="categoryDropDown" class="dropdown-menu" aria-labelledby="navbarDropdown">
+						</div>
+
+						<script>
+							axios.get('/newPost/allCategories')
+								.then(response => {
+									var cats=response.data.data;
+									for (var i = 0; i < cats.length; i++) {
+										var anchor = document.createElement("a");
+										anchor.classList.add("dropdown-item");
+										anchor.href = "/articles?category="+cats[i].name
+										anchor.innerHTML = cats[i].name.toString();
+										document.getElementById("categoryDropDown").appendChild(anchor);
+									}
+
+								})
+								.catch(error => {
+									console.log(error);
+								})
+						</script>
+					</li>
+					<li id="subscribe" class="nav-item "><a href="/auth/mailSubscription" class="nav-link">Subscribe</a></li>
 					<li id="about" class="nav-item "><a href="/about" class="nav-link">Team</a></li>
 					<li id="contact" class="nav-item "><a href="/contact" class="nav-link">Contact</a></li>
+					
 					<li id="login" class="nav-item "><a href="/auth/login" class="nav-link">Login</a></li>
 					
 					
@@ -100,6 +127,10 @@
 							document.getElementById('contact').classList.add('active');
 							document.getElementById('home').classList.remove('active');
 						}
+						else if (route.includes('/auth/mailSubscription')) {
+							document.getElementById('subscribe').classList.add('active');
+							document.getElementById('home').classList.remove('active');
+						}
 					</script>
 				</ul>
 			</div>
@@ -109,71 +140,72 @@
 
 	<div id="carouselExampleCaptions" class="carousel slide" data-ride="carousel">
 		<ol class="carousel-indicators">
-		  <li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
-		  <li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
-		  <li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+		
+		
+			<li data-target="#carouselExampleCaptions" data-slide-to="0" class="active"></li>
+		
+		
+		
+			<li data-target="#carouselExampleCaptions" data-slide-to="1"></li>
+		
+		
+		
+			<li data-target="#carouselExampleCaptions" data-slide-to="2"></li>
+		
+		
 		</ol>
+
 		<div class="carousel-inner">
-			<div class ="carousel-item active car car-1" >
-				<div class="col-lg-8 side-car">
-					<!-- <img src="" class="d-block w-50 car-image" alt="..."> -->
-					<h1 class="car-title">HUMAN 2.0: Brain-Machine Interface
+			
+				
+					<div class ="carousel-item active car" style="background-image: url('uploads/1601373215000-neuralink-elon-musk-woke-studio-technology_dezeen_2364_hero-1.jpg');">
+						<div class="col-lg-8 side-car">
+							<!-- <img src="" class="d-block w-50 car-image" alt="..."> -->
+							<h1 class="car-title"><a style="color: white; font-weight: 600;" onMouseOver="this.style.color='#ffd369'"
+								onMouseOut="this.style.color='white'" href="/articles/single//5f73041fa385e11fc0c3daaa">With NEURALINK, Black Mirror Comes To Life</a></h1>
+							<p class="p-style" style="color:whitesmoke;">The Neuralink device has a considerable potential to develop into one of the most important stepping stones in humanity&#39;s future. Since we&#39;re talking about the tech tycoon Elon Musk, we can expect nothing short of a miracle.
 
-					</h1>
-					<p class="p-style" style="color:whitesmoke;">Humans can think incredibly quick, but the bottlenecks come when we try to communicate those thoughts. Humans share only at a fraction of speed that we can think. The technology that can bridge this gap is the brain-machine interface (BMI), also known as Brain-computer interface (BCI), which connects our brains to external devices.</p>
-	
-					
-					<h3  class="cap-style"  style="color: rgb(180, 179, 179);">Read article by Akshatha K Poojary
-					</h3> 
-					
-					<div class="btn btn-color">Go to Article</div>
-				  </div>
+.</p>	
+							<h3  class="cap-style"  style="color: rgb(180, 179, 179);">Read article by Amitash Gopal Rao</h3> 
+							<a class="btn btn-color" href="/articles/single//5f73041fa385e11fc0c3daaa">Go to Article</a>
+						</div>
+					</div>
 				
 			
-			</div>
-		 
-		  <div class ="carousel-item car car-2" >
-			<div class="col-lg-8 side-car">
-				<!-- <img src="" class="d-block w-50 car-image" alt="..."> -->
-				<h1 class="car-title">Immortality: The future of medicine
-				</h1>
-				<p class="p-style" style="color:whitesmoke;">What would it be like to be nearly immortal? To design your own body the way you want to? To live life as long as you would like to? Answers to these questions are being searched in the laboratories everywhere, and scientists are on their feet trying to unravel the mystery of life. Technology is fast rising, and before long, we will soon be witnessing the unbelievable happening around us.</p>
-
-				
-				<h3  class="cap-style"  style="color: rgb(180, 179, 179);">Read article by Insha Manowar</h3> 
-				
-				<div class="btn btn-color">Go to Article</div>
-			  </div>
 			
+				
+					<div class ="carousel-item  car" style="background-image: url('uploads/1601367135076-artificial-intelligence-3382507__340.jpg');">
+						<div class="col-lg-8 side-car">
+							<!-- <img src="" class="d-block w-50 car-image" alt="..."> -->
+							<h1 class="car-title"><a style="color: white; font-weight: 600;" onMouseOver="this.style.color='#ffd369'"
+								onMouseOut="this.style.color='white'" href="/articles/single//5f72ec5fa385e11fc0c3daa9">HUMAN 2.0: Brain-Machine Interface</a></h1>
+							<p class="p-style" style="color:whitesmoke;">Humans can think incredibly quick, but the bottlenecks come when we try to communicate those thoughts. The technology that can bridge this gap is the brain-machine interface.</p>	
+							<h3  class="cap-style"  style="color: rgb(180, 179, 179);">Read article by Akshatha K Poojary</h3> 
+							<a class="btn btn-color" href="/articles/single//5f72ec5fa385e11fc0c3daa9">Go to Article</a>
+						</div>
+					</div>
+				
+			
+			
+				
+					<div class ="carousel-item  car" style="background-image: url('uploads/1600836699710-istockphoto-898963998-170667a.jpg');">
+						<div class="col-lg-8 side-car">
+							<!-- <img src="" class="d-block w-50 car-image" alt="..."> -->
+							<h1 class="car-title"><a style="color: white; font-weight: 600;" onMouseOver="this.style.color='#ffd369'"
+								onMouseOut="this.style.color='white'" href="/articles/single//5f6ad45b9e04c25084c31ed7">WHO MOVED MY CHEESE : Disruptive Innovation and Technology</a></h1>
+							<p class="p-style" style="color:whitesmoke;">Disruptive innovation is a kind of change that helps in the creation of a new market, and value a network and eventually, disrupts an existing market and value network, dislodging established market-leading firms, products.
 
-
+.</p>	
+							<h3  class="cap-style"  style="color: rgb(180, 179, 179);">Read article by Manas R</h3> 
+							<a class="btn btn-color" href="/articles/single//5f6ad45b9e04c25084c31ed7">Go to Article</a>
+						</div>
+					</div>
+				
+			
+			
 		</div>
-		 
-		  <div class ="carousel-item car car-3" >
-			<div class="col-lg-8 side-car">
-				<!-- <img src="" class="d-block w-50 car-image" alt="..."> -->
-				<h1 class="car-title">With NEURALINK, Black Mirror Comes To Life
-
-				</h1>
-				<p class="p-style" style="color:whitesmoke;">Elon Musk, the founder of SpaceX, OpenAI, TheBoringCompany and Tesla.inc, has a talent for imagining an absurd looking future and making it come to life. 
-					What's more, he has done it again! This new project of his somehow m
-					anages to eclipse Tesla and SpaceX in the grandeur of its mission. W
-					hile the other two companies aim to redefine what future humans will 
-					do</p>
-
-				
-				<h3  class="cap-style"  style="color: rgb(180, 179, 179);">Read article by Amitash Gopal Rao</h3> 
-				
-				<div class="btn btn-color">Go to Article</div>
-			  </div>
-			
 
 
-		  </div>
-		 
-		 
-		 
-		</div>
 		<a class="carousel-control-prev" href="#carouselExampleCaptions" role="button" data-slide="prev">
 		  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
 		  <span class="sr-only">Previous</span>
@@ -182,90 +214,144 @@
 		  <span class="carousel-control-next-icon" aria-hidden="true"></span>
 		  <span class="sr-only">Next</span>
 		</a>
-	  </div>
+	</div>
 	
                 <!-- end of carousel -->
                 <!-- category bar -->
 
                 <div class="container-fluid text-center my-5 d-none d-lg-block" >
-                    <div class="navigate link-style">
-                        <a href="#" class="mx-lg-5 mx-sm-4 link-style">Science</a>
-                        <a href="#" class="mx-lg-5 mx-sm-4 link-style">Cybertech</a>
-                        <a href="#" class="mx-lg-5 mx-sm-4 link-style">Social</a>
-                        <a href="#" class="mx-lg-5 mx-sm-4 link-style">Science</a>
-                        <a href="#" class="mx-lg-5 mx-sm-4 link-style">Cybertech</a>
-                        <a href="#" class="mx-lg-5 mx-sm-4 link-style">Social</a>
-                        <a href="#" class="mx-lg-5 mx-sm-4 link-style">Cybertech</a>
-                        <a href="#" class="mx-lg-5 mx-sm-4 link-style">Social</a>
-                       
+                    <div id="categoryList" class="navigate link-style">         
                     </div>
-                </div>
+				</div>
+				<script>
+					axios.get('/newPost/allCategories')
+						.then(response => {
+							var cats=response.data.data;
+							for (var i = 0; i < cats.length; i++) {
+								var catAnchor = document.createElement("a");
+								catAnchor.classList= ("mx-lg-5 mx-sm-4 link-style");
+								catAnchor.href = "/articles?category="+cats[i].name
+								catAnchor.innerHTML = cats[i].name.toString();
+								document.getElementById("categoryList").appendChild(catAnchor);
+							}
+						})
+						.catch(error => {
+							console.log(error);
+						})
+				</script>
 
 				<!-- single post card-->
 				<hr class="longer-hr d-none d-lg-block">
     <div class="container article-post my-5">
+		<h2 style="color:#ffd369 ; font-weight: 700;">Most Viewed Posts</h2>
+		
         <div class="row">
             <div class="col-lg-4 my-2">
-                <h2 style="font-weight: 600;">With NEURALINK, Black Mirror Comes To Life
-                </h2>
-                <span>Amitash Gopal Rao
-                </span>
+                <h2><a style="color: black; font-weight: 600;" onMouseOver="this.style.color='#ffd369'"
+					onMouseOut="this.style.color='black'" href="/articles/single//5f573635d757df4b8700fb89">Interview Experience I: Acing Citrix R&amp;D</a></h2>
+				<span>Name withheld</span>
                 <br>
-                <date>3.04.2020</date>
-           
+				<p>5 mins to read. | 386 views</p>
+				
             </div>   
             <div class="col-lg-4 mx-3 my-2 text-justify">
-                <p>Elon Musk, the founder of SpaceX, OpenAI, TheBoringCompany and Tesla.inc, has a talent for imagining an absurd looking 
-                    future and making it come to life. What's more, he has done it again! </p>
+                <p>The first installment of our Acing Interview series. </p>
             </div> 
             <div class="image mx-3 my-2 col-lg-3">
-                <img height="200" src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRYNznaxc_vWti5q3gF1a6mQW4xb_0J_hT34A&usqp=CAU" alt="">
+                <img width="300" height="200" src="uploads/1600157612243-citrix.jpg" alt="Interview Experience I: Acing Citrix R&amp;D">
             </div>  
-            </div>
-            <hr>
-        <div class="row">
-            <div class="col-lg-4 my-2">
-                <h2 style="font-weight: 600;">WHO MOVED MY CHEESE : Disruptive Innovation and Technology
-                </h2>
-                <span>Author</span>
-                <br>
-                <date>3.04.2020</date>
-
-            </div>   
-            <div class="col-lg-4 mx-3 my-2 text-justify">
-                <p>The theory of disruptive innovation has revolutionised 
-                    the way people think about innovation-driven growth
-                    . It garnered the praise of leaders of small, and 
-                    entrepreneurial companies.</p>
-            </div> 
-            <div class="image mx-3 my-2 col-lg-3">
-                <img height="200" src="https://istemanipalhome.files.wordpress.com/2020/03/phelps_electro-motor_printing_telegraph.jpg?w=1010" alt="">
-            </div>  
-            </div>
-            <hr>
-        <div class="row">
-            <div class="col-lg-4 my-2">
-                <h2 style="font-weight: 600;">This is the article title</h2>
-                <span>Author</span>
-                <br>
-                <date>3.04.2020</date>
-            </div>   
-            <div class="col-lg-4 mx-3 my-2 text-justify">
-                <p>This is the text that goes into the article. 
-                    It is the content.This is the text that goes into 
-                    the article. It is the content.This is the text that
-                     goes into the article. It is the...</p>
-            </div> 
-            <div class="image mx-3 my-2 col-lg-3">
-                <img height="200" src="https://images.unsplash.com/photo-1502919280275-1bed9aca68ab?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80" alt="">
-            </div>  
-            </div>
-            <hr>
         </div>
-    </div>
+		<hr>
+		
+        <div class="row">
+            <div class="col-lg-4 my-2">
+                <h2><a style="color: black; font-weight: 600;" onMouseOver="this.style.color='#ffd369'"
+					onMouseOut="this.style.color='black'" href="/articles/single//5f0d72908aeaf7465987bcb7">IMMORTALITY: THE FUTURE OF MEDICINE</a></h2>
+				<span>Insha Manowar</span>
+                <br>
+				<p>4 mins to read. | 321 views</p>
+				
+            </div>   
+            <div class="col-lg-4 mx-3 my-2 text-justify">
+                <p>What would it be like to be nearly immortal? To design your own body the way you want to? To live life as long as you would like to? Answers to these questions are being searched in the laboratories everywhere, and scientists are on their feet trying to unravel the mystery of life.</p>
+            </div> 
+            <div class="image mx-3 my-2 col-lg-3">
+                <img width="300" height="200" src="uploads/1594716816282-humanity.jpg" alt="IMMORTALITY: THE FUTURE OF MEDICINE">
+            </div>  
+        </div>
+		<hr>
+		
+        <div class="row">
+            <div class="col-lg-4 my-2">
+                <h2><a style="color: black; font-weight: 600;" onMouseOver="this.style.color='#ffd369'"
+					onMouseOut="this.style.color='black'" href="/articles/single//5f1d1facaf71a373f033f0cc">Kargil Vijay Diwas: Defending Sovereignty </a></h2>
+				<span>Suraj P.N.</span>
+                <br>
+				<p>4 mins to read. | 284 views</p>
+				
+            </div>   
+            <div class="col-lg-4 mx-3 my-2 text-justify">
+                <p>On this Vijay Diwas, remember the jawans who sacrificed their lives for the nation, leaving all that was dear to them behind, so that we live in freedom.</p>
+            </div> 
+            <div class="image mx-3 my-2 col-lg-3">
+                <img width="300" height="200" src="uploads/1595744426628-326.jpg" alt="Kargil Vijay Diwas: Defending Sovereignty ">
+            </div>  
+        </div>
+		<hr>
+		
+        <div class="row">
+            <div class="col-lg-4 my-2">
+                <h2><a style="color: black; font-weight: 600;" onMouseOver="this.style.color='#ffd369'"
+					onMouseOut="this.style.color='black'" href="/articles/single//5ef62fef8549f61bec3470b5">BioGenetic  Engineering: A Brave New World</a></h2>
+				<span>Ilaaksh Mishra</span>
+                <br>
+				<p>2 mins to read. | 253 views</p>
+				
+            </div>   
+            <div class="col-lg-4 mx-3 my-2 text-justify">
+                <p>Human genetic modification is the direct alteration with the genome using molecular engineering techniques. In recent developments, methods for modifying genes are often called &#34;gene editing&#34;. </p>
+            </div> 
+            <div class="image mx-3 my-2 col-lg-3">
+                <img width="300" height="200" src="uploads/1593528215315-Fotolia_79547359_Subscription_Monthly_M.jpg" alt="BioGenetic  Engineering: A Brave New World">
+            </div>  
+        </div>
+		<hr>
+		
+        <div class="row">
+            <div class="col-lg-4 my-2">
+                <h2><a style="color: black; font-weight: 600;" onMouseOver="this.style.color='#ffd369'"
+					onMouseOut="this.style.color='black'" href="/articles/single//5f423b1fd757df4b8700fb83">THE SECRETS OF THE FLUTE</a></h2>
+				<span>Yashas C S</span>
+                <br>
+				<p>2 mins to read. | 237 views</p>
+				
+            </div>   
+            <div class="col-lg-4 mx-3 my-2 text-justify">
+                <p>&#34;This little flute of a reed thou hast carried over hills and dales, and hast breathed through it melodies eternally new.&#34; ~ Rabindranath Tagore</p>
+            </div> 
+            <div class="image mx-3 my-2 col-lg-3">
+                <img width="300" height="200" src="uploads/1598176164410-woodwind-music-instrument-whistle-wallpaper-preview.jpg" alt="THE SECRETS OF THE FLUTE">
+            </div>  
+        </div>
+		<hr>
 		
 
-	<footer class="ftco-footer ftco-bg-dark ftco-section">
+		<form id="myform" action="/auth/mailSubscription" method="POST" class="bg-light p-4 p-md-5 contact-form"
+            enctype="multipart/form-data">
+            <p>Subscribe to our blog and we'll keep you updated with new exciting posts.</p>
+            <div class="form-group">
+                <input type="email" name="email" class="form-control" placeholder="Email" required>
+            </div>
+            <div class="form-group">
+                <input type="submit" class="btn btn-primary py-3 px-5">
+            </div>
+		</form>
+		
+	</div>
+	
+</div>
+		
+<footer class="ftco-footer ftco-bg-dark ftco-section" style="color: black;">
     <div class="container">
         <div class="row mb-5">
             <div class="col-md">
@@ -301,8 +387,8 @@
                         <ul>
                             <li><a href="tel://9703003291"><span class="icon icon-phone"></span><span class="text">+91 9703003291</span></a></li>
                             <li><a href="tel://7903273459"><span class="icon icon-phone"></span><span class="text">+91 7903273459</span></a></li>
-                            <li><a href="/cdn-cgi/l/email-protection#40293334252d212e2930212c00272d21292c6e232f2d"><span class="icon icon-envelope"></span><span
-                                        class="text"><span class="__cf_email__" data-cfemail="bbd2c8cfded6dad5d2cbdad7fbdcd6dad2d795d8d4d6">[email&#160;protected]</span></span></a></li>
+                            <li><a href="/cdn-cgi/l/email-protection#0f667c7b6a626e61667f6e636d606e7d6b4f68626e6663216c6062"><span class="icon icon-envelope"></span><span
+                                        class="text"><span class="__cf_email__" data-cfemail="6c051f1809010d02051c0d000e030d1e082c0b010d0500420f0301">[email&#160;protected]</span></span></a></li>
                         </ul>
                     </div>
                 </div>
@@ -315,7 +401,7 @@
                     <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                     Copyright &copy;
                     <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>document.write(new Date().getFullYear());</script> All rights reserved | This template
-                    is made with <i class="icon-heart heart-color" aria-hidden="true"></i> by <a
+                    is made with <i class="icon-heart color-danger" aria-hidden="true"></i> by <a
                         href="https://colorlib.com" target="_blank">Colorlib</a>
                     <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
                 </p>

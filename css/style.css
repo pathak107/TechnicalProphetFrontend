@@ -4194,7 +4194,7 @@ input[type="button"].btn-block {
   padding: 2rem 1rem;
   margin-bottom: 2rem;
   background-color: #e9ecef;
-  border-radius: 0.3rem; }
+ }
   @media (min-width: 576px) {
     .jumbotron {
       padding: 4rem 2rem; } }
@@ -8029,7 +8029,7 @@ h1, h2, h3, h4, h5,
 .ftco-navbar-light {
   background: transparent !important;
   position: absolute;
-  top: 20px;
+  
   left: 0;
   right: 0;
   z-index: 3; }
@@ -8628,7 +8628,7 @@ textarea.form-control {
 
 .ftco-footer {
   font-size: 16px;
-  background: #222831;
+  background: black;
   padding: 5em 0 3em 0; }
   .ftco-footer .logo {
     font-size: 34px !important;
@@ -9266,28 +9266,11 @@ z-index: 1;
 width: 700px;
 border: 2px solid black;
 }
-.car-1{
- 
-   background-image: url(https://blog.istemanipal.com/articles/single//uploads/1594716816282-humanity.jpg);"
-  
-   
-}
-.car-2{
-  
-   background-image: url(https://blog.istemanipal.com/articles/single//uploads/1598176164410-woodwind-music-instrument-whistle-wallpaper-preview.jpg);"
-  
-   
-}
-.car-3{
- 
-   background-image: url(https://blog.istemanipal.com/articles/single//uploads/1601373215000-neuralink-elon-musk-woke-studio-technology_dezeen_2364_hero-1.jpg);"
- 
-   
-}
+
 .car{
   background-repeat: none !important;
    background-size: cover;
-   margin-top: 5.5%;
+   margin-top: 4%;
    height: 80vh;
 
 }
@@ -9312,7 +9295,7 @@ border: 2px solid black;
   height: 80vh;
   padding: 1%;
   width: 42vw;
-  margin-left: 40px;
+  margin:auto;
 }
 .btn-color{
   background-color: black;
@@ -9328,9 +9311,7 @@ border: 2px solid black;
   margin-top: 3%;
   text-align: justify;
 }
-.cap-style{
 
-}
 @media (max-width: 767.98px) {
 
   .car-title{
