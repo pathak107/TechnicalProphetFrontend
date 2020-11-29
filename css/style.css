@@ -9410,10 +9410,7 @@ border: 2px solid black;
 .img-hover:hover{
   -webkit-filter: grayscale(100%); /* Ch 23+, Saf 6.0+, BB 10.0+ */
   filter: grayscale(100%); /* FF 35+ */
-  box-shadow: 0px 0px 5px rgba(0,0,0,.5);
 }
 .img-hover{
-  box-shadow: 0px 0px 5px rgba(0,0,0,.5);
-  border-radius: 3px;
 
 }
