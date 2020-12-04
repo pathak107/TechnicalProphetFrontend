@@ -12,7 +12,10 @@
 		gtag('js', new Date());
 
 		gtag('config', 'UA-171309141-1');
-	</script>
+  </script>
+  
+	<script defer src="./js/articles.js"></script>
+
 
 
 	<title>Technical Prophet</title>
@@ -58,6 +61,7 @@
 	<link rel="stylesheet" href="css/flaticon.css">
 	<link rel="stylesheet" href="css/icomoon.css">
 	<link rel="stylesheet" href="css/style.css">
+	<link rel="stylesheet" href="css/articles.css">
 </head>
 
 <body>
@@ -135,8 +139,14 @@
 	</div>
    	<section class="ftco-section bg-light">
       <div class="container">
+        <div class="row">
+          <div class="col-lg-4 col-lg-offset-4 mb-5">
+              <div class="input-group">
+                  <input onkeyup="search()" id="search-bar" placeholder="Search" type="text" class="form-control" /> 
+              </div><!-- /input-group -->
+          </div><!-- /.col-lg-4 -->
+      </div><!-- /.row -->
         <div class="row d-flex">
-
           
           <!-- Single Card of post -->
           <div class="col-md-4 d-flex ftco-animate">
