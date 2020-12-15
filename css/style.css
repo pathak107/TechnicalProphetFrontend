@@ -42,8 +42,9 @@
             html,
             body {
                 width: 100%;
-                overflow-x: hidden;
+                overflow-x: hidden !important;
                 scroll-behavior: smooth;
+
             }
         }
   .our-team {
@@ -9533,4 +9534,16 @@ border: 2px solid black;
 .img-hover:hover{
   -webkit-filter: grayscale(100%); /* Ch 23+, Saf 6.0+, BB 10.0+ */
   filter: grayscale(100%); /* FF 35+ */
+}
+.team-content p{
+  padding: 5% !important;
+  text-align: justify;
+}
+.custom-height{
+  height: 95% !important;
+  width: 100% !important;
+  
+}
+.auth:hover{
+  color: var(--yellow);
 }

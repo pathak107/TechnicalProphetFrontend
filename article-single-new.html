@@ -1,412 +1,904 @@
-
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <!-- Google analytics for the page -->
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script
+      async
+      src="https://www.googletagmanager.com/gtag/js?id=UA-171309141-1"
+    ></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag("js", new Date());
 
-<head>
-	<!-- Google analytics for the page -->
-	<!-- Global site tag (gtag.js) - Google Analytics -->
-	<script async src="https://www.googletagmanager.com/gtag/js?id=UA-171309141-1"></script>
-	<script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-	<script>
-		window.dataLayer = window.dataLayer || [];
-		function gtag() { dataLayer.push(arguments); }
-		gtag('js', new Date());
+      gtag("config", "UA-171309141-1");
+    </script>
 
-		gtag('config', 'UA-171309141-1');
-	</script>
+    <title>Technical Prophet</title>
+    <meta
+      name="description"
+      content="The first installment of our Acing Interview series. "
+    />
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
 
+    <!-- facebook linkedin meta tags -->
+    <meta property="og:type" content="article" />
+    <meta
+      property="og:title"
+      content="Interview Experience I: Acing Citrix R&amp;D"
+    />
+    <meta
+      property="og:description"
+      content="The first installment of our Acing Interview series. "
+    />
+    <meta
+      property="og:image"
+      content="https://blog.istemanipal.com/mobile/1600157612243-citrix.jpg"
+    />
+    <meta
+      property="og:url"
+      content="https://blog.istemanipal.com/articles/5f573635d757df4b8700fb89"
+    />
+    <meta property="og:site_name" content="The Technical Prophet" />
 
-	<title>Technical Prophet</title>
-	<meta name="description" content="The first installment of our Acing Interview series. ">
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- twitter meta tags -->
+    <meta
+      name="twitter:title"
+      content="Interview Experience I: Acing Citrix R&amp;D"
+    />
+    <meta
+      name="twitter:description"
+      content="The first installment of our Acing Interview series. "
+    />
+    <meta
+      name="twitter:image"
+      content="https://blog.istemanipal.com/mobile/1600157612243-citrix.jpg"
+    />
+    <meta name="twitter:site" content="@Shubham97390539" />
+    <meta name="twitter:creator" content="@Shubham97390539" />
+    <meta name="twitter:card" content="summary_large_image" />
 
-	<!-- facebook linkedin meta tags -->
-	<meta property="og:type" content="article" />
-	<meta property="og:title" content="Interview Experience I: Acing Citrix R&amp;D" />
-	<meta property="og:description" content="The first installment of our Acing Interview series. " />
-	<meta property="og:image" content="https://blog.istemanipal.com/mobile/1600157612243-citrix.jpg" />
-	<meta property="og:url" content="https://blog.istemanipal.com/articles/5f573635d757df4b8700fb89" />
-	<meta property="og:site_name" content="The Technical Prophet" />
+    <!-- canonical tag -->
+    <link rel="canonical" href="https://blog.istemanipal.com/" />
 
-	<!-- twitter meta tags -->
-	<meta name="twitter:title" content="Interview Experience I: Acing Citrix R&amp;D">
-	<meta name="twitter:description" content="The first installment of our Acing Interview series. ">
-	<meta name="twitter:image" content="https://blog.istemanipal.com/mobile/1600157612243-citrix.jpg">
-	<meta name="twitter:site" content="@Shubham97390539">
-	<meta name="twitter:creator" content="@Shubham97390539">
-	<meta name="twitter:card" content="summary_large_image">
+    <link
+      href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900"
+      rel="stylesheet"
+    />
 
-	<!-- canonical tag -->
-	<link rel="canonical" href="https://blog.istemanipal.com/" />
+    <!-- favicon -->
+    <link
+      rel="icon"
+      href="/images/ISTELOG.png"
+      type="image/gif"
+      sizes="16x16"
+    />
 
-	<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+    <link rel="stylesheet" href="css/open-iconic-bootstrap.min.css" />
+    <link rel="stylesheet" href="css/animate.css" />
 
-	<!-- favicon -->
-	<link rel="icon" href="/images/ISTELOG.png" type="image/gif" sizes="16x16">
+    <link rel="stylesheet" href="css/owl.carousel.min.css" />
+    <link rel="stylesheet" href="css/owl.theme.default.min.css" />
+    <link rel="stylesheet" href="css/magnific-popup.css" />
 
-	<link rel="stylesheet" href="css/open-iconic-bootstrap.min.css">
-	<link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/aos.css" />
 
-	<link rel="stylesheet" href="css/owl.carousel.min.css">
-	<link rel="stylesheet" href="css/owl.theme.default.min.css">
-	<link rel="stylesheet" href="css/magnific-popup.css">
+    <link rel="stylesheet" href="css/ionicons.min.css" />
 
-	<link rel="stylesheet" href="css/aos.css">
+    <link rel="stylesheet" href="css/flaticon.css" />
+    <link rel="stylesheet" href="css/icomoon.css" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
 
-	<link rel="stylesheet" href="css/ionicons.min.css">
+  <body>
+    <nav
+      class="nav-custom-color navbar px-md-0 navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light"
+      id="ftco-navbar"
+    >
+      <div class="container">
+        <a class="navbar-brand" href="/">Technical<i>Prophet</i>.</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#ftco-nav"
+          aria-controls="ftco-nav"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="oi oi-menu"></span> Menu
+        </button>
 
-	<link rel="stylesheet" href="css/flaticon.css">
-	<link rel="stylesheet" href="css/icomoon.css">
-	<link rel="stylesheet" href="css/style.css">
-</head>
+        <div class="collapse navbar-collapse" id="ftco-nav">
+          <ul class="navbar-nav ml-auto">
+            <li id="home" class="nav-item active">
+              <a href="/" class="nav-link">Home</a>
+            </li>
+            <li id="articles" class="nav-item dropdown">
+              <a
+                class="nav-link dropdown-toggle"
+                href="/articles"
+                id="navbarDropdown"
+                role="button"
+                aria-haspopup="true"
+                aria-expanded="false"
+              >
+                Articles
+              </a>
 
-<body>
+              <div
+                id="categoryDropDown"
+                class="dropdown-menu"
+                aria-labelledby="navbarDropdown"
+              ></div>
 
-	<nav class=" nav-custom-color navbar px-md-0 navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
-		<div class="container">
+              <script>
+                axios
+                  .get("/newPost/allCategories")
+                  .then((response) => {
+                    var cats = response.data.data;
+                    for (var i = 0; i < cats.length; i++) {
+                      var anchor = document.createElement("a");
+                      anchor.classList.add("dropdown-item");
+                      anchor.href = "/articles?category=" + cats[i].name;
+                      anchor.innerHTML = cats[i].name.toString();
+                      document
+                        .getElementById("categoryDropDown")
+                        .appendChild(anchor);
+                    }
+                  })
+                  .catch((error) => {
+                    console.log(error);
+                  });
+              </script>
+            </li>
+            <li id="subscribe" class="nav-item">
+              <a href="/auth/mailSubscription" class="nav-link">Subscribe</a>
+            </li>
+            <li id="about" class="nav-item">
+              <a href="/about" class="nav-link">Team</a>
+            </li>
+            <li id="contact" class="nav-item">
+              <a href="/contact" class="nav-link">Contact</a>
+            </li>
 
-			<a class="navbar-brand" href="/">Technical<i>Prophet</i>.</a>
-			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav"
-				aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="oi oi-menu"></span> Menu
-			</button>
+            <li id="login" class="nav-item">
+              <a href="/auth/login" class="nav-link">Login</a>
+            </li>
 
-			<div class="collapse navbar-collapse" id="ftco-nav">
-				<ul class="navbar-nav ml-auto">
-					<li id="home" class="nav-item  active"><a href="/" class="nav-link">Home</a></li>
-					<li id="articles" class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle" href="/articles" id="navbarDropdown" role="button"
-							aria-haspopup="true" aria-expanded="false">
-							Articles
-						</a>
-
-						<div id="categoryDropDown" class="dropdown-menu" aria-labelledby="navbarDropdown">
-						</div>
-
-						<script>
-							axios.get('/newPost/allCategories')
-								.then(response => {
-									var cats=response.data.data;
-									for (var i = 0; i < cats.length; i++) {
-										var anchor = document.createElement("a");
-										anchor.classList.add("dropdown-item");
-										anchor.href = "/articles?category="+cats[i].name
-										anchor.innerHTML = cats[i].name.toString();
-										document.getElementById("categoryDropDown").appendChild(anchor);
-									}
-
-								})
-								.catch(error => {
-									console.log(error);
-								})
-						</script>
-					</li>
-					<li id="subscribe" class="nav-item "><a href="/auth/mailSubscription" class="nav-link">Subscribe</a></li>
-					<li id="about" class="nav-item "><a href="/about" class="nav-link">Team</a></li>
-					<li id="contact" class="nav-item "><a href="/contact" class="nav-link">Contact</a></li>
-					
-					<li id="login" class="nav-item "><a href="/auth/login" class="nav-link">Login</a></li>
-					
-					
-
-
-					<script>
-						//code for setting active page
-						let route = window.location.href;
-						console.log(route.includes('/about'))
-						if (route.includes('/about')) {
-							document.getElementById('about').classList.add('active');
-							document.getElementById('home').classList.remove('active');
-						}
-						else if (route.includes('/articles')) {
-							document.getElementById('articles').classList.add('active');
-							document.getElementById('home').classList.remove('active');
-						}
-						else if (route.includes('/contact')) {
-							document.getElementById('contact').classList.add('active');
-							document.getElementById('home').classList.remove('active');
-						}
-						else if (route.includes('/auth/mailSubscription')) {
-							document.getElementById('subscribe').classList.add('active');
-							document.getElementById('home').classList.remove('active');
-						}
-					</script>
-				</ul>
-			</div>
-		</div>
-	</nav>
-	<!-- END nav -->
-
-<div class="jumbotron  container-fluid" style="background-color: #0cbaba;
-  background-image: linear-gradient(315deg, #0cbaba 0%, #380036 74%);
-  ;
-  ">
-      <h1 class=" my-5 single-article-font text-center" style="color: white;">Interview Experience I: Acing Citrix R&amp;D</h1>
-</div>
-
-<section class="ftco-section ftco-degree-bg">
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-8 ftco-animate">
-        <p class="mb-5">
-          <img src="uploads/1600157612243-citrix.jpg" alt="Post Image" class="img-fluid">
-        </p>
-        <h2 class="mb-3">Interview Experience I: Acing Citrix R&amp;D</h2>
-        <div>
-          <p><a href="https://www.citrix.com/en-in/about/" target="_blank" class="md-opjjpmhoiojifppkkcdabiobhakljdgm_doc">Citrix R&amp;D, Bangalore</a>, visited our campus from 28th to 29th August. The entire process of selection comprised of an online test and three interview rounds F2F(virtual). The company made the process eligible for CS, IT, CCE, EC, EE branches. Around 350 people applied for the online test.</p><p><br></p><h1>Phase-I:</h1><p>Online Test The online test was conducted on Hackerrank. The total duration was 2 hours. There were:&nbsp;</p><h2>&nbsp;2 coding questions</h2><p>&nbsp;i) Given an array of length n containing the cost of moves. The starting position is index 0. You can either take one step or a prime number step ending with 3. The task is to calculate the maximum score(addition of costs) to reach the last (n-1)th index.</p><p>ii) Given an array of positive integers (may contain duplicates), the task is to find the number of triplets whose product is equal to a given number t.</p><p><br></p><h2>40 MCQs&nbsp;&nbsp;</h2><p>The MCQs were from popular CS subjects like Database Systems, Computer Networks, Operating Systems, theoretical concepts of digital electronics, basic aptitude, and C-programming outputs.</p><p><br></p><p>29 people were shortlisted for interview rounds.&nbsp;</p><p><br></p><h1>Phase-II: Interview Rounds</h1><h2>Round 1(Tech)-</h2><p>The interviewer had ten years of experience at Citrix. The interview was conducted on codepair(Hackerrank). The total duration was 45-50 mins. The questions were asked on OS concepts like thrashing, multithreading, and process scheduling. Then a programming question with 6 test cases to pass was asked.</p><p><br></p><p>Question- The are three inputs a-first element of AP, d- common difference of AP, n- nth prime number of the AP series. I was required to return the nth prime number of the arithmetic progression. If the values of a and d weren't coprime, then 0 had to be returned. Relatively simple, but further, I was asked to reduce its time complexity of the code.</p><p>Then some CV-based questions were asked related to my projects. While I was coding, the interviewer asked about my interests and the technologies I knew.</p><p><br></p><p>20 people were shortlisted for Round 2.</p><p><br></p><h2>Round 2(Tech)-</h2><p>This round was oriented more towards CS-subjects, conducted on codepair. The total duration of the round was 2 hours. The questions asked were:</p><ol><li>Explain deadlock through real-life examples&nbsp;</li><li>Explain how deadlock can be prevented in that situation&nbsp;</li><li>Explain how the deadlock can be avoided.</li><li>What is the concept of context switch in the process?&nbsp;</li><li>What are system calls?&nbsp;</li><li>How is fork() and exec() calls different from each other?&nbsp;</li><li>How do client and server processes communicate in a distributed system?</li><li>What is the importance of having parent and child processes in a distributed system?</li><li>Where are the processes stored during the context switch?&nbsp;</li><li>What is virtual memory? What is its size?&nbsp;</li><li>Explain the paging concept.&nbsp;</li><li>What are different page fault algorithms?&nbsp;</li><li>Name all the layers of the OSI model.&nbsp;</li><li>What is the work of the Presentation layer?</li><li>What are the different encoding techniques in networking?</li><li>What are routers? At which layer are they used?</li><li>How are routers, bridges, and switches different?</li><li>What happens when you type a URL in a web browser?</li><li>What is normalization in DBS?</li><li>Explain all the conditions for Normalisation.</li></ol><p><br></p><p>He asked me about the concept of Overloading. I was asked to write all possible functions for a given function to implement Overloading. How does typecasting work? What is overriding? Code some examples and explain the concept.</p><p><br></p><p>After this discussion, the interviewer asked me <a href="https://www.geeksforgeeks.org/puzzle-16-100-doors/" target="_blank" class="md-opjjpmhoiojifppkkcdabiobhakljdgm_doc">this puzzle</a>, and this discussion continued for about 30 minutes. Some questions like my plans on higher studies and what role would I be comfortable with at the company.</p><p><br></p><p>12 people were shortlisted for Round 3.</p><p><br></p><h2>Round 3(Managerial)-</h2><p>This was the last round taken by a networking engineer at the company on codepair. The total duration of the round was 30 mins.</p><p>I was asked to explain my most recent project. Why did I go for flutter instead of Java/Kotlin for the app? What was the target audience of the app? Can the app be scaled?</p><p>Then he asked me what all apps do I use in my daily life. He asked me to point out some flaws in those apps like Whatsapp, Facebook, etc. Then I was asked to rate myself in C++, Python. He asked me all the technologies that I knew apart from my curriculum. Then he asked me to implement a queue data structure using stack. The approach was asked wherein he pointed out that the time complexity was high. So I was asked to optimise it, and finally code it. Then he asked me my previous rounds experience.&nbsp;</p><p><br></p><h2>The result-</h2><p>4 students were selected for the Full-Time Employee + Internship offer, and 3 students were chosen for the Internship offer. I secured FTE+Internship.&nbsp;</p><p><br></p><h1>BONUS TIPS&nbsp;</h1><p>These are some tips I gained through my previous interview experiences, and they have proved fruitful to me. Some general and all-time heard tips are also on the list because they are equally important.&nbsp;</p><ol><li>Always have a smile on your face throughout the interview. It makes the interviewer feel comfortable answering the questions, and he is not torturing you. It shouldn't seem like an interview but a technical discussion.</li><li>Ask the interviewer to repeat if you didn't understand the question correctly.</li><li>If you do not know about any topic, subject, concept, or item, tell him that you don't know. Honesty is better than being caught lying after the interviewer digs deep into the question/concept. And honesty is appreciated.</li><li>Keep your introduction limited to 3-4 lines, including your major, minor, what you like to do apart from the curriculum, and some of your hobbies.</li><li>If you are not confident about any question, but you can think of some approach, don't hesitate; start answering. Take your time to think; they won't pressurize you for taking the time. But keep telling him your approach. There shouldn't be complete silence for a long time. Take their hints, and you may land up to the correct solution. It's okay, even if you don't get the final answer. I couldn't solve the puzzle even after taking all the hints, but he was impressed by how I approached and didn't give up too early.</li><li>It is quite normal to be a bit scared during the interview. But try to look confident. Fake it, but don't show that you are anxious and shivering. You may be shivering from inside but make sure you look perfectly fine from outside. Don't panic, and keep calm. Always have the thought that this interview will give you loads of experience, which counts a lot in the further rounds of the interview as well as other company interviews.</li><li>Don't lie in your resume. You will be questioned on most of the things that you mentioned in your resume. If you lied and you fumble while explaining, it gives a wrong impression to the interviewer.</li></ol><p><br></p><h1>PREPARATION TIPS:</h1><ul><li>1. Start preparing as soon as possible. If you are determined that you have to crack a good company in the upcoming placement season, start practicing.</li><li>2. Do not directly jump into problems. First, study all the concepts, try coding them on your own, then start solving it on other practice platforms. Lack of concept may make the questions look incomprehensible. Try preparing topic by topic; and then you can go for hybrid problems. If you aren't able to think of any solution, refer to the discussion forum and solution. Even after you have solved a problem, look for some answers in the discussion forum. You may find a more optimal solution and try implementing that as well. No one writes an optimal code in the first go. You have to improvise to make it optimal. In my OT's second question, I wrote an O(n^3) solution, but I couldn't optimise it due to lack of time.</li><li>3. Most important- Database Management Systems, Computer Networks, Object-Oriented Programming, Operating System, and C-programming questions are equally important as practicing competitive coding. Prepare them very thoroughly, so well that you can answer any question. The MCQs from these topics are straightforward and won't take much time if you have good command. You can practice C programming output questions from geeksforgeeks and MCQs of CS subjects from <a href="https://compsciedu.com/" target="_blank" class="md-opjjpmhoiojifppkkcdabiobhakljdgm_doc">compscibits</a>.</li><li>4. Don't take aptitude lightly. If you haven't revised it in a long while, take out some time and do so. You can refer <a href="https://www.youtube.com/channel/UCEFTTJFLp4GipA7BLZNTXvA" target="_blank" class="md-opjjpmhoiojifppkkcdabiobhakljdgm_doc">FreshersWorld youtube channel</a> to get a hold of aptitude.</li><li>5. As most of the students mention, GFG is the bible. It's very accurate; you won't find any question out of GFG in any of the interviews. The data structure and algorithm concepts are essential for the interviews, and the competitive coding questions are necessary for the online tests(OTs). You can practice DSA from GFG and competitive coding from LeetCode.</li><li>6. The best way to prepare any DSA topic is to watch videos/read the concepts and try coding them on your own. Always prepare anything in a way that you can explain it to someone.</li><li>7. The last tip, don't panic if you find something challenging. Just give it some time. The more time you provide, the better you'll get at it. One such concept is dynamic programming, which takes quite a time to master. So plan well, prepare well. All the best!!</li></ul><p><br></p><p><br></p>
+            <script>
+              //code for setting active page
+              let route = window.location.href;
+              console.log(route.includes("/about"));
+              if (route.includes("/about")) {
+                document.getElementById("about").classList.add("active");
+                document.getElementById("home").classList.remove("active");
+              } else if (route.includes("/articles")) {
+                document.getElementById("articles").classList.add("active");
+                document.getElementById("home").classList.remove("active");
+              } else if (route.includes("/contact")) {
+                document.getElementById("contact").classList.add("active");
+                document.getElementById("home").classList.remove("active");
+              } else if (route.includes("/auth/mailSubscription")) {
+                document.getElementById("subscribe").classList.add("active");
+                document.getElementById("home").classList.remove("active");
+              }
+            </script>
+          </ul>
         </div>
+      </div>
+    </nav>
+    <!-- END nav -->
 
+    <div
+      class="jumbotron container-fluid"
+      style="
+        background-color: #0cbaba;
+        background-image: linear-gradient(315deg, #0cbaba 0%, #380036 74%); ;
+      "
+    >
+      <h1 class="my-5 single-article-font text-center" style="color: white">
+        Interview Experience I: Acing Citrix R&amp;D
+      </h1>
+    </div>
 
-        <!-- Tags and keywords -->
-        <div class="tag-widget post-tag-container mb-5 mt-5">
-          <div class="tagcloud">
-            
-            <a href="#" class="tag-cloud-link">placement interview</a>
-            
-            <a href="#" class="tag-cloud-link"> interview tips</a>
-            
-            <a href="#" class="tag-cloud-link"> citrix R&amp;d interview</a>
-            
-            <a href="#" class="tag-cloud-link"> citrix r&amp;d</a>
-            
-            <a href="#" class="tag-cloud-link"> manipal</a>
-            
-            <a href="#" class="tag-cloud-link"> college placement</a>
-            
-            <a href="#" class="tag-cloud-link"> placement</a>
-            
-            <a href="#" class="tag-cloud-link"> </a>
-            
+    <section class="ftco-section ftco-degree-bg">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 ftco-animate">
+            <p class="mb-5">
+              <img
+                src="uploads/1600157612243-citrix.jpg"
+                alt="Post Image"
+                class="img-fluid"
+              />
+            </p>
+            <div>
+              <p>
+                <a
+                  href="https://www.citrix.com/en-in/about/"
+                  target="_blank"
+                  class="md-opjjpmhoiojifppkkcdabiobhakljdgm_doc"
+                  >Citrix R&amp;D, Bangalore</a
+                >, visited our campus from 28th to 29th August. The entire
+                process of selection comprised of an online test and three
+                interview rounds F2F(virtual). The company made the process
+                eligible for CS, IT, CCE, EC, EE branches. Around 350 people
+                applied for the online test.
+              </p>
+              <p><br /></p>
+              <h1>Phase-I:</h1>
+              <p>
+                Online Test The online test was conducted on Hackerrank. The
+                total duration was 2 hours. There were:&nbsp;
+              </p>
+              <h2>&nbsp;2 coding questions</h2>
+              <p>
+                &nbsp;i) Given an array of length n containing the cost of
+                moves. The starting position is index 0. You can either take one
+                step or a prime number step ending with 3. The task is to
+                calculate the maximum score(addition of costs) to reach the last
+                (n-1)th index.
+              </p>
+              <p>
+                ii) Given an array of positive integers (may contain
+                duplicates), the task is to find the number of triplets whose
+                product is equal to a given number t.
+              </p>
+              <p><br /></p>
+              <h2>40 MCQs&nbsp;&nbsp;</h2>
+              <p>
+                The MCQs were from popular CS subjects like Database Systems,
+                Computer Networks, Operating Systems, theoretical concepts of
+                digital electronics, basic aptitude, and C-programming outputs.
+              </p>
+              <p><br /></p>
+              <p>29 people were shortlisted for interview rounds.&nbsp;</p>
+              <p><br /></p>
+              <h1>Phase-II: Interview Rounds</h1>
+              <h2>Round 1(Tech)-</h2>
+              <p>
+                The interviewer had ten years of experience at Citrix. The
+                interview was conducted on codepair(Hackerrank). The total
+                duration was 45-50 mins. The questions were asked on OS concepts
+                like thrashing, multithreading, and process scheduling. Then a
+                programming question with 6 test cases to pass was asked.
+              </p>
+              <p><br /></p>
+              <p>
+                Question- The are three inputs a-first element of AP, d- common
+                difference of AP, n- nth prime number of the AP series. I was
+                required to return the nth prime number of the arithmetic
+                progression. If the values of a and d weren't coprime, then 0
+                had to be returned. Relatively simple, but further, I was asked
+                to reduce its time complexity of the code.
+              </p>
+              <p>
+                Then some CV-based questions were asked related to my projects.
+                While I was coding, the interviewer asked about my interests and
+                the technologies I knew.
+              </p>
+              <p><br /></p>
+              <p>20 people were shortlisted for Round 2.</p>
+              <p><br /></p>
+              <h2>Round 2(Tech)-</h2>
+              <p>
+                This round was oriented more towards CS-subjects, conducted on
+                codepair. The total duration of the round was 2 hours. The
+                questions asked were:
+              </p>
+              <ol>
+                <li>Explain deadlock through real-life examples&nbsp;</li>
+                <li>
+                  Explain how deadlock can be prevented in that situation&nbsp;
+                </li>
+                <li>Explain how the deadlock can be avoided.</li>
+                <li>
+                  What is the concept of context switch in the process?&nbsp;
+                </li>
+                <li>What are system calls?&nbsp;</li>
+                <li>
+                  How is fork() and exec() calls different from each
+                  other?&nbsp;
+                </li>
+                <li>
+                  How do client and server processes communicate in a
+                  distributed system?
+                </li>
+                <li>
+                  What is the importance of having parent and child processes in
+                  a distributed system?
+                </li>
+                <li>
+                  Where are the processes stored during the context
+                  switch?&nbsp;
+                </li>
+                <li>What is virtual memory? What is its size?&nbsp;</li>
+                <li>Explain the paging concept.&nbsp;</li>
+                <li>What are different page fault algorithms?&nbsp;</li>
+                <li>Name all the layers of the OSI model.&nbsp;</li>
+                <li>What is the work of the Presentation layer?</li>
+                <li>
+                  What are the different encoding techniques in networking?
+                </li>
+                <li>What are routers? At which layer are they used?</li>
+                <li>How are routers, bridges, and switches different?</li>
+                <li>What happens when you type a URL in a web browser?</li>
+                <li>What is normalization in DBS?</li>
+                <li>Explain all the conditions for Normalisation.</li>
+              </ol>
+              <p><br /></p>
+              <p>
+                He asked me about the concept of Overloading. I was asked to
+                write all possible functions for a given function to implement
+                Overloading. How does typecasting work? What is overriding? Code
+                some examples and explain the concept.
+              </p>
+              <p><br /></p>
+              <p>
+                After this discussion, the interviewer asked me
+                <a
+                  href="https://www.geeksforgeeks.org/puzzle-16-100-doors/"
+                  target="_blank"
+                  class="md-opjjpmhoiojifppkkcdabiobhakljdgm_doc"
+                  >this puzzle</a
+                >, and this discussion continued for about 30 minutes. Some
+                questions like my plans on higher studies and what role would I
+                be comfortable with at the company.
+              </p>
+              <p><br /></p>
+              <p>12 people were shortlisted for Round 3.</p>
+              <p><br /></p>
+              <h2>Round 3(Managerial)-</h2>
+              <p>
+                This was the last round taken by a networking engineer at the
+                company on codepair. The total duration of the round was 30
+                mins.
+              </p>
+              <p>
+                I was asked to explain my most recent project. Why did I go for
+                flutter instead of Java/Kotlin for the app? What was the target
+                audience of the app? Can the app be scaled?
+              </p>
+              <p>
+                Then he asked me what all apps do I use in my daily life. He
+                asked me to point out some flaws in those apps like Whatsapp,
+                Facebook, etc. Then I was asked to rate myself in C++, Python.
+                He asked me all the technologies that I knew apart from my
+                curriculum. Then he asked me to implement a queue data structure
+                using stack. The approach was asked wherein he pointed out that
+                the time complexity was high. So I was asked to optimise it, and
+                finally code it. Then he asked me my previous rounds
+                experience.&nbsp;
+              </p>
+              <p><br /></p>
+              <h2>The result-</h2>
+              <p>
+                4 students were selected for the Full-Time Employee + Internship
+                offer, and 3 students were chosen for the Internship offer. I
+                secured FTE+Internship.&nbsp;
+              </p>
+              <p><br /></p>
+              <h1>BONUS TIPS&nbsp;</h1>
+              <p>
+                These are some tips I gained through my previous interview
+                experiences, and they have proved fruitful to me. Some general
+                and all-time heard tips are also on the list because they are
+                equally important.&nbsp;
+              </p>
+              <ol>
+                <li>
+                  Always have a smile on your face throughout the interview. It
+                  makes the interviewer feel comfortable answering the
+                  questions, and he is not torturing you. It shouldn't seem like
+                  an interview but a technical discussion.
+                </li>
+                <li>
+                  Ask the interviewer to repeat if you didn't understand the
+                  question correctly.
+                </li>
+                <li>
+                  If you do not know about any topic, subject, concept, or item,
+                  tell him that you don't know. Honesty is better than being
+                  caught lying after the interviewer digs deep into the
+                  question/concept. And honesty is appreciated.
+                </li>
+                <li>
+                  Keep your introduction limited to 3-4 lines, including your
+                  major, minor, what you like to do apart from the curriculum,
+                  and some of your hobbies.
+                </li>
+                <li>
+                  If you are not confident about any question, but you can think
+                  of some approach, don't hesitate; start answering. Take your
+                  time to think; they won't pressurize you for taking the time.
+                  But keep telling him your approach. There shouldn't be
+                  complete silence for a long time. Take their hints, and you
+                  may land up to the correct solution. It's okay, even if you
+                  don't get the final answer. I couldn't solve the puzzle even
+                  after taking all the hints, but he was impressed by how I
+                  approached and didn't give up too early.
+                </li>
+                <li>
+                  It is quite normal to be a bit scared during the interview.
+                  But try to look confident. Fake it, but don't show that you
+                  are anxious and shivering. You may be shivering from inside
+                  but make sure you look perfectly fine from outside. Don't
+                  panic, and keep calm. Always have the thought that this
+                  interview will give you loads of experience, which counts a
+                  lot in the further rounds of the interview as well as other
+                  company interviews.
+                </li>
+                <li>
+                  Don't lie in your resume. You will be questioned on most of
+                  the things that you mentioned in your resume. If you lied and
+                  you fumble while explaining, it gives a wrong impression to
+                  the interviewer.
+                </li>
+              </ol>
+              <p><br /></p>
+              <h1>PREPARATION TIPS:</h1>
+              <ul>
+                <li>
+                  1. Start preparing as soon as possible. If you are determined
+                  that you have to crack a good company in the upcoming
+                  placement season, start practicing.
+                </li>
+                <li>
+                  2. Do not directly jump into problems. First, study all the
+                  concepts, try coding them on your own, then start solving it
+                  on other practice platforms. Lack of concept may make the
+                  questions look incomprehensible. Try preparing topic by topic;
+                  and then you can go for hybrid problems. If you aren't able to
+                  think of any solution, refer to the discussion forum and
+                  solution. Even after you have solved a problem, look for some
+                  answers in the discussion forum. You may find a more optimal
+                  solution and try implementing that as well. No one writes an
+                  optimal code in the first go. You have to improvise to make it
+                  optimal. In my OT's second question, I wrote an O(n^3)
+                  solution, but I couldn't optimise it due to lack of time.
+                </li>
+                <li>
+                  3. Most important- Database Management Systems, Computer
+                  Networks, Object-Oriented Programming, Operating System, and
+                  C-programming questions are equally important as practicing
+                  competitive coding. Prepare them very thoroughly, so well that
+                  you can answer any question. The MCQs from these topics are
+                  straightforward and won't take much time if you have good
+                  command. You can practice C programming output questions from
+                  geeksforgeeks and MCQs of CS subjects from
+                  <a
+                    href="https://compsciedu.com/"
+                    target="_blank"
+                    class="md-opjjpmhoiojifppkkcdabiobhakljdgm_doc"
+                    >compscibits</a
+                  >.
+                </li>
+                <li>
+                  4. Don't take aptitude lightly. If you haven't revised it in a
+                  long while, take out some time and do so. You can refer
+                  <a
+                    href="https://www.youtube.com/channel/UCEFTTJFLp4GipA7BLZNTXvA"
+                    target="_blank"
+                    class="md-opjjpmhoiojifppkkcdabiobhakljdgm_doc"
+                    >FreshersWorld youtube channel</a
+                  >
+                  to get a hold of aptitude.
+                </li>
+                <li>
+                  5. As most of the students mention, GFG is the bible. It's
+                  very accurate; you won't find any question out of GFG in any
+                  of the interviews. The data structure and algorithm concepts
+                  are essential for the interviews, and the competitive coding
+                  questions are necessary for the online tests(OTs). You can
+                  practice DSA from GFG and competitive coding from LeetCode.
+                </li>
+                <li>
+                  6. The best way to prepare any DSA topic is to watch
+                  videos/read the concepts and try coding them on your own.
+                  Always prepare anything in a way that you can explain it to
+                  someone.
+                </li>
+                <li>
+                  7. The last tip, don't panic if you find something
+                  challenging. Just give it some time. The more time you
+                  provide, the better you'll get at it. One such concept is
+                  dynamic programming, which takes quite a time to master. So
+                  plan well, prepare well. All the best!!
+                </li>
+              </ul>
+              <p><br /></p>
+              <p><br /></p>
+            </div>
+
+            <!-- Tags and keywords -->
+            <div class="tag-widget post-tag-container mb-5 mt-5">
+              <div class="tagcloud">
+                <a href="#" class="tag-cloud-link">placement interview</a>
+
+                <a href="#" class="tag-cloud-link"> interview tips</a>
+
+                <a href="#" class="tag-cloud-link"> citrix R&amp;d interview</a>
+
+                <a href="#" class="tag-cloud-link"> citrix r&amp;d</a>
+
+                <a href="#" class="tag-cloud-link"> manipal</a>
+
+                <a href="#" class="tag-cloud-link"> college placement</a>
+
+                <a href="#" class="tag-cloud-link"> placement</a>
+
+                <a href="#" class="tag-cloud-link"> </a>
               </div>
             </div>
-            
+
             <div class="about-author d-flex p-4 bg-light">
               <div class="desc">
                 <h3>Author</h3>
                 <h3>Name withheld</h3>
-            <p>Former member of ISTE, Manipal</p>
-          </div>
-        </div>
+                <p>Former member of ISTE, Manipal</p>
+              </div>
+            </div>
 
+            <!-- delete button for post -->
 
-        <!-- delete button for post -->
-        
-
-        <!-- Edit post button -->
-        
+            <!-- Edit post button -->
 
             <!-- recent posts -->
             <h1>Related Posts</h1>
-            
-        <div class="block-21 mb-4 d-flex">
-          <a class="blog-img mr-4" style="background-image: url(uploads/1601373215000-neuralink-elon-musk-woke-studio-technology_dezeen_2364_hero-1.jpg);"></a>
-          <div class="text">
-            <h3 class="heading"><a href="/articles/single//5f73041fa385e11fc0c3daaa">With NEURALINK, Black Mirror Comes To Life</a></h3>
-            <div class="meta">
-              <div><a href="/articles/single//5f73041fa385e11fc0c3daaa"><span class="icon-calendar"></span>
-                  29 Sep 2020</a></div>
-              <div><a href="/articles/single//5f73041fa385e11fc0c3daaa"><span class="icon-person"></span> Admin</a></div>
-            </div>
-          </div>
-        </div>
-        
-        <div class="block-21 mb-4 d-flex">
-          <a class="blog-img mr-4" style="background-image: url(uploads/1601367135076-artificial-intelligence-3382507__340.jpg);"></a>
-          <div class="text">
-            <h3 class="heading"><a href="/articles/single//5f72ec5fa385e11fc0c3daa9">HUMAN 2.0: Brain-Machine Interface</a></h3>
-            <div class="meta">
-              <div><a href="/articles/single//5f72ec5fa385e11fc0c3daa9"><span class="icon-calendar"></span>
-                  29 Sep 2020</a></div>
-              <div><a href="/articles/single//5f72ec5fa385e11fc0c3daa9"><span class="icon-person"></span> Admin</a></div>
-            </div>
-          </div>
-        </div>
-        
-        <div class="block-21 mb-4 d-flex">
-          <a class="blog-img mr-4" style="background-image: url(uploads/1600836699710-istockphoto-898963998-170667a.jpg);"></a>
-          <div class="text">
-            <h3 class="heading"><a href="/articles/single//5f6ad45b9e04c25084c31ed7">WHO MOVED MY CHEESE : Disruptive Innovation and Technology</a></h3>
-            <div class="meta">
-              <div><a href="/articles/single//5f6ad45b9e04c25084c31ed7"><span class="icon-calendar"></span>
-                  23 Sep 2020</a></div>
-              <div><a href="/articles/single//5f6ad45b9e04c25084c31ed7"><span class="icon-person"></span> Admin</a></div>
-            </div>
-          </div>
-        </div>
-        
 
+            <div class="block-21 mb-4 d-flex">
+              <a
+                class="blog-img mr-4"
+                style="
+                  background-image: url(uploads/1601373215000-neuralink-elon-musk-woke-studio-technology_dezeen_2364_hero-1.jpg);
+                "
+              ></a>
+              <div class="text">
+                <h3 class="heading">
+                  <a href="/articles/single//5f73041fa385e11fc0c3daaa"
+                    >With NEURALINK, Black Mirror Comes To Life</a
+                  >
+                </h3>
+                <div class="meta">
+                  <div>
+                    <a href="/articles/single//5f73041fa385e11fc0c3daaa"
+                      ><span class="icon-calendar"></span> 29 Sep 2020</a
+                    >
+                  </div>
+                  <div>
+                    <a href="/articles/single//5f73041fa385e11fc0c3daaa"
+                      ><span class="icon-person"></span> Admin</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="block-21 mb-4 d-flex">
+              <a
+                class="blog-img mr-4"
+                style="
+                  background-image: url(uploads/1601367135076-artificial-intelligence-3382507__340.jpg);
+                "
+              ></a>
+              <div class="text">
+                <h3 class="heading">
+                  <a href="/articles/single//5f72ec5fa385e11fc0c3daa9"
+                    >HUMAN 2.0: Brain-Machine Interface</a
+                  >
+                </h3>
+                <div class="meta">
+                  <div>
+                    <a href="/articles/single//5f72ec5fa385e11fc0c3daa9"
+                      ><span class="icon-calendar"></span> 29 Sep 2020</a
+                    >
+                  </div>
+                  <div>
+                    <a href="/articles/single//5f72ec5fa385e11fc0c3daa9"
+                      ><span class="icon-person"></span> Admin</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="block-21 mb-4 d-flex">
+              <a
+                class="blog-img mr-4"
+                style="
+                  background-image: url(uploads/1600836699710-istockphoto-898963998-170667a.jpg);
+                "
+              ></a>
+              <div class="text">
+                <h3 class="heading">
+                  <a href="/articles/single//5f6ad45b9e04c25084c31ed7"
+                    >WHO MOVED MY CHEESE : Disruptive Innovation and
+                    Technology</a
+                  >
+                </h3>
+                <div class="meta">
+                  <div>
+                    <a href="/articles/single//5f6ad45b9e04c25084c31ed7"
+                      ><span class="icon-calendar"></span> 23 Sep 2020</a
+                    >
+                  </div>
+                  <div>
+                    <a href="/articles/single//5f6ad45b9e04c25084c31ed7"
+                      ><span class="icon-person"></span> Admin</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
 
             <div class="pt-5 mt-5">
               <h3 class="mb-5">4 Comments</h3>
-        <ul class="comment-list">
+              <ul class="comment-list">
+                <li class="comment">
+                  <div class="vcard bio">
+                    <img src="images/user.png" alt="Image placeholder" />
+                  </div>
+                  <div class="comment-body">
+                    <h3>Amar dixit</h3>
+                    <p>
+                      <a
+                        href="/cdn-cgi/l/email-protection"
+                        class="__cf_email__"
+                        data-cfemail="64050905160a05100c1d0b11240309050d084a070b09"
+                        >[email&#160;protected]</a
+                      >
+                    </p>
+                    <div class="meta mb-3">Tue, 08 Sep 2020 at 15:11hrs</div>
+                    <p>
+                      Your experience will be very useful for me and other
+                      programming world students, I say this honestly with great
+                      honesty my friend
+                    </p>
 
-          
-          <li class="comment">
-            <div class="vcard bio">
-              <img src="images/user.png" alt="Image placeholder">
-            </div>
-            <div class="comment-body">
-              <h3>Amar dixit </h3>
-              <p><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="64050905160a05100c1d0b11240309050d084a070b09">[email&#160;protected]</a></p>
-              <div class="meta mb-3">Tue, 08 Sep 2020 at
-                15:11hrs</div>
-              <p>Your experience will be very useful for me and other programming world students, I say this honestly with great honesty my friend</p>
-
-              <!-- delete comment -->
-              
-
-                    
+                    <!-- delete comment -->
                   </div>
                 </li>
-                
-          <li class="comment">
-            <div class="vcard bio">
-              <img src="images/user.png" alt="Image placeholder">
-            </div>
-            <div class="comment-body">
-              <h3>Amar dixit </h3>
-              <p><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="096864687b67687d6170667c496e64686065276a6664">[email&#160;protected]</a></p>
-              <div class="meta mb-3">Tue, 08 Sep 2020 at
-                15:11hrs</div>
-              <p>Your experience will be very useful for me and other programming world students, I say this honestly with great honesty my friend</p>
 
-              <!-- delete comment -->
-              
+                <li class="comment">
+                  <div class="vcard bio">
+                    <img src="images/user.png" alt="Image placeholder" />
+                  </div>
+                  <div class="comment-body">
+                    <h3>Amar dixit</h3>
+                    <p>
+                      <a
+                        href="/cdn-cgi/l/email-protection"
+                        class="__cf_email__"
+                        data-cfemail="096864687b67687d6170667c496e64686065276a6664"
+                        >[email&#160;protected]</a
+                      >
+                    </p>
+                    <div class="meta mb-3">Tue, 08 Sep 2020 at 15:11hrs</div>
+                    <p>
+                      Your experience will be very useful for me and other
+                      programming world students, I say this honestly with great
+                      honesty my friend
+                    </p>
 
-                    
+                    <!-- delete comment -->
                   </div>
                 </li>
-                
-          <li class="comment">
-            <div class="vcard bio">
-              <img src="images/user.png" alt="Image placeholder">
-            </div>
-            <div class="comment-body">
-              <h3>Insha Manowar</h3>
-              <p><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="244d4a574c4549454a4b5345561616644349454d480a474b49">[email&#160;protected]</a></p>
-              <div class="meta mb-3">Tue, 08 Sep 2020 at
-                13:06hrs</div>
-              <p>Beautifully explained! Thank-you for sharing your experience, and congratulation!</p>
 
-              <!-- delete comment -->
-              
+                <li class="comment">
+                  <div class="vcard bio">
+                    <img src="images/user.png" alt="Image placeholder" />
+                  </div>
+                  <div class="comment-body">
+                    <h3>Insha Manowar</h3>
+                    <p>
+                      <a
+                        href="/cdn-cgi/l/email-protection"
+                        class="__cf_email__"
+                        data-cfemail="244d4a574c4549454a4b5345561616644349454d480a474b49"
+                        >[email&#160;protected]</a
+                      >
+                    </p>
+                    <div class="meta mb-3">Tue, 08 Sep 2020 at 13:06hrs</div>
+                    <p>
+                      Beautifully explained! Thank-you for sharing your
+                      experience, and congratulation!
+                    </p>
 
-                    
+                    <!-- delete comment -->
                   </div>
                 </li>
-                
-          <li class="comment">
-            <div class="vcard bio">
-              <img src="images/user.png" alt="Image placeholder">
-            </div>
-            <div class="comment-body">
-              <h3>Shubham Pathak</h3>
-              <p><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="ddaeb0bcafa9aeb5a8bfb5bcb0adbca9b5bcb69dbab0bcb4b1f3beb2b0">[email&#160;protected]</a></p>
-              <div class="meta mb-3">Tue, 08 Sep 2020 at
-                08:50hrs</div>
-              <p>Extremely well written and very helpful. Thanks Ayush.</p>
 
-              <!-- delete comment -->
-              
+                <li class="comment">
+                  <div class="vcard bio">
+                    <img src="images/user.png" alt="Image placeholder" />
+                  </div>
+                  <div class="comment-body">
+                    <h3>Shubham Pathak</h3>
+                    <p>
+                      <a
+                        href="/cdn-cgi/l/email-protection"
+                        class="__cf_email__"
+                        data-cfemail="ddaeb0bcafa9aeb5a8bfb5bcb0adbca9b5bcb69dbab0bcb4b1f3beb2b0"
+                        >[email&#160;protected]</a
+                      >
+                    </p>
+                    <div class="meta mb-3">Tue, 08 Sep 2020 at 08:50hrs</div>
+                    <p>
+                      Extremely well written and very helpful. Thanks Ayush.
+                    </p>
 
-                    
+                    <!-- delete comment -->
                   </div>
                 </li>
-                
+              </ul>
+              <!-- END comment-list -->
 
-        </ul>
-        <!-- END comment-list -->
-
-        <div class="comment-form-wrap pt-5">
-          <h3 class="mb-5">Leave a comment</h3>
-          <form action="/articles/single//5f573635d757df4b8700fb89" method="POST" class="p-5 bg-light" enctype="multipart/form-data">
-            <div class="form-group">
-              <label for="name">Name *</label>
-              <input type="text" class="form-control" name="name" required>
-            </div>
-            <div class="form-group">
-              <label for="email">Email *</label>
-              <input type="email" class="form-control" name="email" required>
-            </div>
-            <div class="form-group">
-              <label for="Comment">Comment *</label>
-              <textarea name="comment" id="comment" cols="30" rows="10" class="form-control" required></textarea>
-            </div>
-            <div class="form-group">
-              <input type="submit" value="Post Comment" class="btn py-3 px-4 btn-primary">
-            </div>
-
-          </form>
-        </div>
-      </div>
-
-    </div> <!-- .col-md-8 -->
-    <div class="col-lg-4 sidebar pl-lg-5 ftco-animate">
-
-      <div class="sidebar-box ftco-animate">
-        <h3>Recent Posts</h3>
-
-        
-        <div class="block-21 mb-4 d-flex">
-          <a class="blog-img mr-4" style="background-image: url(uploads/1601373215000-neuralink-elon-musk-woke-studio-technology_dezeen_2364_hero-1.jpg);"></a>
-          <div class="text">
-            <h3 class="heading"><a href="/articles/single//5f73041fa385e11fc0c3daaa">With NEURALINK, Black Mirror Comes To Life</a></h3>
-            <div class="meta">
-              <div><a href="/articles/single//5f73041fa385e11fc0c3daaa"><span class="icon-calendar"></span>
-                  29 Sep 2020</a></div>
-              <div><a href="/articles/single//5f73041fa385e11fc0c3daaa"><span>2 mins read</span> </a></div>
+              <div class="comment-form-wrap pt-5">
+                <h3 class="mb-5">Leave a comment</h3>
+                <form
+                  action="/articles/single//5f573635d757df4b8700fb89"
+                  method="POST"
+                  class="p-5 bg-light"
+                  enctype="multipart/form-data"
+                >
+                  <div class="form-group">
+                    <label for="name">Name *</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      name="name"
+                      required
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="email">Email *</label>
+                    <input
+                      type="email"
+                      class="form-control"
+                      name="email"
+                      required
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="Comment">Comment *</label>
+                    <textarea
+                      name="comment"
+                      id="comment"
+                      cols="30"
+                      rows="10"
+                      class="form-control"
+                      required
+                    ></textarea>
+                  </div>
+                  <div class="form-group">
+                    <input
+                      type="submit"
+                      value="Post Comment"
+                      class="btn py-3 px-4 btn-primary"
+                    />
+                  </div>
+                </form>
+              </div>
             </div>
           </div>
-        </div>
-        
-        <div class="block-21 mb-4 d-flex">
-          <a class="blog-img mr-4" style="background-image: url(uploads/1601367135076-artificial-intelligence-3382507__340.jpg);"></a>
-          <div class="text">
-            <h3 class="heading"><a href="/articles/single//5f72ec5fa385e11fc0c3daa9">HUMAN 2.0: Brain-Machine Interface</a></h3>
-            <div class="meta">
-              <div><a href="/articles/single//5f72ec5fa385e11fc0c3daa9"><span class="icon-calendar"></span>
-                  29 Sep 2020</a></div>
-              <div><a href="/articles/single//5f72ec5fa385e11fc0c3daa9"><span>4 mins read</span> </a></div>
-            </div>
-          </div>
-        </div>
-        
-        <div class="block-21 mb-4 d-flex">
-          <a class="blog-img mr-4" style="background-image: url(uploads/1600836699710-istockphoto-898963998-170667a.jpg);"></a>
-          <div class="text">
-            <h3 class="heading"><a href="/articles/single//5f6ad45b9e04c25084c31ed7">WHO MOVED MY CHEESE : Disruptive Innovation and Technology</a></h3>
-            <div class="meta">
-              <div><a href="/articles/single//5f6ad45b9e04c25084c31ed7"><span class="icon-calendar"></span>
-                  23 Sep 2020</a></div>
-              <div><a href="/articles/single//5f6ad45b9e04c25084c31ed7"><span>3 mins read</span> </a></div>
-            </div>
-          </div>
-        </div>
-        
+          <!-- .col-md-8 -->
+          <div class="col-lg-4 sidebar pl-lg-5 ftco-animate">
+            <div class="sidebar-box ftco-animate">
+              <h3>Recent Posts</h3>
 
+              <div class="block-21 mb-4 d-flex">
+                <a
+                  class="blog-img mr-4"
+                  style="
+                    background-image: url(uploads/1601373215000-neuralink-elon-musk-woke-studio-technology_dezeen_2364_hero-1.jpg);
+                  "
+                ></a>
+                <div class="text">
+                  <h3 class="heading">
+                    <a href="/articles/single//5f73041fa385e11fc0c3daaa"
+                      >With NEURALINK, Black Mirror Comes To Life</a
+                    >
+                  </h3>
+                  <div class="meta">
+                    <div>
+                      <a href="/articles/single//5f73041fa385e11fc0c3daaa"
+                        ><span class="icon-calendar"></span> 29 Sep 2020</a
+                      >
+                    </div>
+                    <div>
+                      <a href="/articles/single//5f73041fa385e11fc0c3daaa"
+                        ><span>2 mins read</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="block-21 mb-4 d-flex">
+                <a
+                  class="blog-img mr-4"
+                  style="
+                    background-image: url(uploads/1601367135076-artificial-intelligence-3382507__340.jpg);
+                  "
+                ></a>
+                <div class="text">
+                  <h3 class="heading">
+                    <a href="/articles/single//5f72ec5fa385e11fc0c3daa9"
+                      >HUMAN 2.0: Brain-Machine Interface</a
+                    >
+                  </h3>
+                  <div class="meta">
+                    <div>
+                      <a href="/articles/single//5f72ec5fa385e11fc0c3daa9"
+                        ><span class="icon-calendar"></span> 29 Sep 2020</a
+                      >
+                    </div>
+                    <div>
+                      <a href="/articles/single//5f72ec5fa385e11fc0c3daa9"
+                        ><span>4 mins read</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="block-21 mb-4 d-flex">
+                <a
+                  class="blog-img mr-4"
+                  style="
+                    background-image: url(uploads/1600836699710-istockphoto-898963998-170667a.jpg);
+                  "
+                ></a>
+                <div class="text">
+                  <h3 class="heading">
+                    <a href="/articles/single//5f6ad45b9e04c25084c31ed7"
+                      >WHO MOVED MY CHEESE : Disruptive Innovation and
+                      Technology</a
+                    >
+                  </h3>
+                  <div class="meta">
+                    <div>
+                      <a href="/articles/single//5f6ad45b9e04c25084c31ed7"
+                        ><span class="icon-calendar"></span> 23 Sep 2020</a
+                      >
+                    </div>
+                    <div>
+                      <a href="/articles/single//5f6ad45b9e04c25084c31ed7"
+                        ><span>3 mins read</span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
 
             <div class="sidebar-box ftco-animate">
               <h3>Tag Cloud</h3>
               <div class="tagcloud">
-                
-        <a href="#" class="tag-cloud-link">placement interview</a>
-        
-        <a href="#" class="tag-cloud-link"> interview tips</a>
-        
-        <a href="#" class="tag-cloud-link"> citrix R&amp;d interview</a>
-        
-        <a href="#" class="tag-cloud-link"> citrix r&amp;d</a>
-        
-        <a href="#" class="tag-cloud-link"> manipal</a>
-        
-        <a href="#" class="tag-cloud-link"> college placement</a>
-        
-        <a href="#" class="tag-cloud-link"> placement</a>
-        
-        <a href="#" class="tag-cloud-link"> </a>
-        
+                <a href="#" class="tag-cloud-link">placement interview</a>
+
+                <a href="#" class="tag-cloud-link"> interview tips</a>
+
+                <a href="#" class="tag-cloud-link"> citrix R&amp;d interview</a>
+
+                <a href="#" class="tag-cloud-link"> citrix r&amp;d</a>
+
+                <a href="#" class="tag-cloud-link"> manipal</a>
+
+                <a href="#" class="tag-cloud-link"> college placement</a>
+
+                <a href="#" class="tag-cloud-link"> placement</a>
+
+                <a href="#" class="tag-cloud-link"> </a>
               </div>
             </div>
 
@@ -419,122 +911,223 @@
             </div>  -->
             <!-- end of advertisements -->
 
-        <form id="myform" action="/auth/mailSubscription" method="POST" class="bg-light p-4 p-md-5 contact-form"
-            enctype="multipart/form-data">
-            <p>Subscribe to our blog and we'll keep you updated with new exciting posts.</p>
-            <div class="form-group">
-                <input type="email" name="email" class="form-control" placeholder="Email" required>
-            </div>
-            <div class="form-group">
-                <input type="submit" class="btn btn-primary py-3 px-5">
-            </div>
-        </form>
+            <form
+              id="myform"
+              action="/auth/mailSubscription"
+              method="POST"
+              class="bg-light p-4 p-md-5 contact-form"
+              enctype="multipart/form-data"
+            >
+              <p>
+                Subscribe to our blog and we'll keep you updated with new
+                exciting posts.
+              </p>
+              <div class="form-group">
+                <input
+                  type="email"
+                  name="email"
+                  class="form-control"
+                  placeholder="Email"
+                  required
+                />
+              </div>
+              <div class="form-group">
+                <input type="submit" class="btn btn-primary py-3 px-5" />
+              </div>
+            </form>
 
             <div class="sidebar-box ftco-animate">
               <div class="categories">
                 <h3>Categories</h3>
-                
-                  <li><a href="/articles?category=Science">Science<span class="ion-ios-arrow-forward"></span></a></li>
-                
-                  <li><a href="/articles?category=Cyber-Tech">Cyber-Tech<span class="ion-ios-arrow-forward"></span></a></li>
-                
-                  <li><a href="/articles?category=Social">Social<span class="ion-ios-arrow-forward"></span></a></li>
-                
+
+                <li>
+                  <a href="/articles?category=Science"
+                    >Science<span class="ion-ios-arrow-forward"></span
+                  ></a>
+                </li>
+
+                <li>
+                  <a href="/articles?category=Cyber-Tech"
+                    >Cyber-Tech<span class="ion-ios-arrow-forward"></span
+                  ></a>
+                </li>
+
+                <li>
+                  <a href="/articles?category=Social"
+                    >Social<span class="ion-ios-arrow-forward"></span
+                  ></a>
+                </li>
               </div>
             </div>
-            
-            
           </div>
-
         </div>
       </div>
-    </section> <!-- .section -->
+    </section>
+    <!-- .section -->
 
-    <footer class="ftco-footer ftco-bg-dark ftco-section" style="color: black;">
-    <div class="container">
+    <footer class="ftco-footer ftco-bg-dark ftco-section" style="color: black">
+      <div class="container">
         <div class="row mb-5">
-            <div class="col-md">
-                <div class="ftco-footer-widget mb-4">
-                    <h2 class="logo"><a href="#">Technical<span>Prophet</span>.</a></h2>
-                    <p>Technical Prophet is the official blog of ISTE Manipal. Stay tuned for more technical blogs which will blow your mind.</p>
-                    <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
-                        <li class="ftco-animate"><a target="_blank" href="https://www.linkedin.com/company/iste-manipal/"><span class="icon-linkedin"></span></a></li>
-                        <li class="ftco-animate"><a target="_blank" href="https://www.facebook.com/istemanipal/"><span class="icon-facebook"></span></a></li>
-                        <li class="ftco-animate"><a target="_blank" href="https://www.instagram.com/istemanipal/?igshid=1ubr443b0anlx"><span class="icon-instagram"></span></a></li>
-                    </ul>
-                </div>
+          <div class="col-md">
+            <div class="ftco-footer-widget mb-4">
+              <h2 class="logo">
+                <a href="#">Technical<span>Prophet</span>.</a>
+              </h2>
+              <p>
+                Technical Prophet is the official blog of ISTE Manipal. Stay
+                tuned for more technical blogs which will blow your mind.
+              </p>
+              <ul
+                class="ftco-footer-social list-unstyled float-md-left float-lft mt-5"
+              >
+                <li class="ftco-animate">
+                  <a
+                    target="_blank"
+                    href="https://www.linkedin.com/company/iste-manipal/"
+                    ><span class="icon-linkedin"></span
+                  ></a>
+                </li>
+                <li class="ftco-animate">
+                  <a
+                    target="_blank"
+                    href="https://www.facebook.com/istemanipal/"
+                    ><span class="icon-facebook"></span
+                  ></a>
+                </li>
+                <li class="ftco-animate">
+                  <a
+                    target="_blank"
+                    href="https://www.instagram.com/istemanipal/?igshid=1ubr443b0anlx"
+                    ><span class="icon-instagram"></span
+                  ></a>
+                </li>
+              </ul>
             </div>
-            <div class="col-md">
-                <div class="ftco-footer-widget mb-4 ml-md-5">
-                    <h2 class="ftco-heading-2">Information</h2>
-                    <ul class="list-unstyled">
-                        <li><a href="/" class="py-1 d-block"><span
-                                    class="ion-ios-arrow-forward mr-3"></span>Home</a></li>
-                        <li><a href="/about" class="py-1 d-block"><span
-                                    class="ion-ios-arrow-forward mr-3"></span>About</a></li>
-                        <li><a href="/articles" class="py-1 d-block"><span
-                                    class="ion-ios-arrow-forward mr-3"></span>Articles</a></li>
-                        <li><a href="/contact" class="py-1 d-block"><span
-                                    class="ion-ios-arrow-forward mr-3"></span>Contact</a></li>
-                    </ul>
-                </div>
+          </div>
+          <div class="col-md">
+            <div class="ftco-footer-widget mb-4 ml-md-5">
+              <h2 class="ftco-heading-2">Information</h2>
+              <ul class="list-unstyled">
+                <li>
+                  <a href="/" class="py-1 d-block"
+                    ><span class="ion-ios-arrow-forward mr-3"></span>Home</a
+                  >
+                </li>
+                <li>
+                  <a href="/about" class="py-1 d-block"
+                    ><span class="ion-ios-arrow-forward mr-3"></span>About</a
+                  >
+                </li>
+                <li>
+                  <a href="/articles" class="py-1 d-block"
+                    ><span class="ion-ios-arrow-forward mr-3"></span>Articles</a
+                  >
+                </li>
+                <li>
+                  <a href="/contact" class="py-1 d-block"
+                    ><span class="ion-ios-arrow-forward mr-3"></span>Contact</a
+                  >
+                </li>
+              </ul>
             </div>
-            <div class="col-md">
-                <div class="ftco-footer-widget mb-4">
-                    <h2 class="ftco-heading-2">Have a Question?</h2>
-                    <div class="block-23 mb-3">
-                        <ul>
-                            <li><a href="tel://9703003291"><span class="icon icon-phone"></span><span class="text">+91 9703003291</span></a></li>
-                            <li><a href="tel://7903273459"><span class="icon icon-phone"></span><span class="text">+91 7903273459</span></a></li>
-                            <li><a href="/cdn-cgi/l/email-protection#e9809a9d8c848887809988858b86889b8da98e84888085c78a8684"><span class="icon icon-envelope"></span><span
-                                        class="text"><span class="__cf_email__" data-cfemail="264f5552434b47484f56474a444947544266414b474f4a0845494b">[email&#160;protected]</span></span></a></li>
-                        </ul>
-                    </div>
-                </div>
+          </div>
+          <div class="col-md">
+            <div class="ftco-footer-widget mb-4">
+              <h2 class="ftco-heading-2">Have a Question?</h2>
+              <div class="block-23 mb-3">
+                <ul>
+                  <li>
+                    <a href="tel://9703003291"
+                      ><span class="icon icon-phone"></span
+                      ><span class="text">+91 9703003291</span></a
+                    >
+                  </li>
+                  <li>
+                    <a href="tel://7903273459"
+                      ><span class="icon icon-phone"></span
+                      ><span class="text">+91 7903273459</span></a
+                    >
+                  </li>
+                  <li>
+                    <a
+                      href="/cdn-cgi/l/email-protection#e9809a9d8c848887809988858b86889b8da98e84888085c78a8684"
+                      ><span class="icon icon-envelope"></span
+                      ><span class="text"
+                        ><span
+                          class="__cf_email__"
+                          data-cfemail="264f5552434b47484f56474a444947544266414b474f4a0845494b"
+                          >[email&#160;protected]</span
+                        ></span
+                      ></a
+                    >
+                  </li>
+                </ul>
+              </div>
             </div>
+          </div>
         </div>
         <div class="row">
-            <div class="col-md-12 text-center">
-
-                <p>
-                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                    Copyright &copy;
-                    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>document.write(new Date().getFullYear());</script> All rights reserved | This template
-                    is made with <i class="icon-heart color-danger" aria-hidden="true"></i> by <a
-                        href="https://colorlib.com" target="_blank">Colorlib</a>
-                    <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
-                </p>
-            </div>
+          <div class="col-md-12 text-center">
+            <p>
+              <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+              Copyright &copy;
+              <script
+                data-cfasync="false"
+                src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"
+              ></script>
+              <script>
+                document.write(new Date().getFullYear());
+              </script>
+              All rights reserved | This template is made with
+              <i class="icon-heart color-danger" aria-hidden="true"></i> by
+              <a href="https://colorlib.com" target="_blank">Colorlib</a>
+              <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+            </p>
+          </div>
         </div>
+      </div>
+    </footer>
+
+    <!-- loader -->
+    <div id="ftco-loader" class="show fullscreen">
+      <svg class="circular" width="48px" height="48px">
+        <circle
+          class="path-bg"
+          cx="24"
+          cy="24"
+          r="22"
+          fill="none"
+          stroke-width="4"
+          stroke="#eeeeee"
+        />
+        <circle
+          class="path"
+          cx="24"
+          cy="24"
+          r="22"
+          fill="none"
+          stroke-width="4"
+          stroke-miterlimit="10"
+          stroke="#F96D00"
+        />
+      </svg>
     </div>
-</footer>
 
-
-
-<!-- loader -->
-<div id="ftco-loader" class="show fullscreen"><svg class="circular" width="48px" height="48px">
-        <circle class="path-bg" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke="#eeeeee" />
-        <circle class="path" cx="24" cy="24" r="22" fill="none" stroke-width="4" stroke-miterlimit="10"
-            stroke="#F96D00" /></svg></div>
-
-
-<script src="js/jquery.min.js"></script>
-<script src="js/jquery-migrate-3.0.1.min.js"></script>
-<script src="js/popper.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="js/jquery.easing.1.3.js"></script>
-<script src="js/jquery.waypoints.min.js"></script>
-<script src="js/jquery.stellar.min.js"></script>
-<script src="js/owl.carousel.min.js"></script>
-<script src="js/jquery.magnific-popup.min.js"></script>
-<script src="js/aos.js"></script>
-<script src="js/jquery.animateNumber.min.js"></script>
-<script src="js/scrollax.min.js"></script>
-<!-- <script
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery-migrate-3.0.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.easing.1.3.js"></script>
+    <script src="js/jquery.waypoints.min.js"></script>
+    <script src="js/jquery.stellar.min.js"></script>
+    <script src="js/owl.carousel.min.js"></script>
+    <script src="js/jquery.magnific-popup.min.js"></script>
+    <script src="js/aos.js"></script>
+    <script src="js/jquery.animateNumber.min.js"></script>
+    <script src="js/scrollax.min.js"></script>
+    <!-- <script
     src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script> -->
-<!-- <script src="js/google-map.js"></script> -->
-<script src="js/main.js"></script>
-
-</body>
-
+    <!-- <script src="js/google-map.js"></script> -->
+    <script src="js/main.js"></script>
+  </body>
 </html>
