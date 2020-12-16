@@ -9537,12 +9537,12 @@ border: 2px solid black;
 }
 .team-content p{
   padding: 5% !important;
-  text-align: justify;
+  text-align: center;
 }
 .custom-height{
   height: 95% !important;
   width: 100% !important;
-  
+
 }
 .auth:hover{
   color: var(--yellow);
